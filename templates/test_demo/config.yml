@@ -1,0 +1,8 @@
+name: seafile_test 
+description: |
+    seafile  
+version:  1.0.0
+category:  seafile_service
+maintainer:  weds
+license: seafile:v1.0.0
+projectURL: https://github.com/muzongchuan006/seafile
