@@ -1,0 +1,27 @@
+version: '2'
+services:
+  seafile:
+     image: 10.0.0.96:5000/my_os/centos:seafile_v0.1
+     hostname: seafile
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     ports:
+       - "38082:8082"
+       - "38000:8000"
+     volumes:
+       - /demo/node/seafile:/data
+     privileged: true
+     tty: true
+  sync-server:
+     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     hostname: sync-server
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     ports:
+       - "8100:8100"
+     volumes:
+       - /demo/node/sync-server:/data
+     privileged: true
+     tty: true

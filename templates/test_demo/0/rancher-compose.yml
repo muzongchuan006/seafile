@@ -1,0 +1,32 @@
+version: '2'
+.catalog:
+  name: "public_test"
+  version: "v0.0.1"
+  description: "public service for test."
+  uuid: public-0
+  minimum_rancher_version: v1.0.0
+services:
+  seafile:
+    scale: 1
+    start_on_create: true
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 8000
+      unhealthy_threshold: 3
+      interval: 2000
+      strategy: recreate
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.204"
+  sync-server:
+    scale: 1
+    start_on_create: true
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 8100
+      unhealthy_threshold: 3
+      interval: 2000
+      strategy: recreate
+    labels:
+      io.rancher.container.requested_ip: "10.42.1.205"
