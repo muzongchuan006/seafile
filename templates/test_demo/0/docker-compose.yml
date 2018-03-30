@@ -14,7 +14,7 @@ services:
      privileged: true
      tty: true
   sync-server:
-     image: 10.0.0.96:5000/my_os/centos:7.java.v1.2
+     image: 10.0.0.96:5000/my_os/centos:7.java.sync
      hostname: sync-server
      labels:
       io.rancher.scheduler.global: 'true'
