@@ -12,6 +12,8 @@ services:
      volumes:
        - /demo/node/seafile:/data
      privileged: true
+     command:
+       - /usr/sbin/init
      tty: true
   sync-server:
      image: 10.0.0.96:5000/my_os/centos:7.java.sync
@@ -24,4 +26,6 @@ services:
      volumes:
        - /demo/node/sync-server:/data
      privileged: true
+     command:
+       - /usr/sbin/init
      tty: true
