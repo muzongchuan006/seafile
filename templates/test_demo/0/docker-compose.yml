@@ -29,3 +29,31 @@ services:
      command:
        - /usr/sbin/init
      tty: true
+  material-service:
+     image: 10.0.0.96:5000/my_os/centos:7.java.material
+     hostname: material-service
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     ports:
+       - "9000:9000"
+     volumes:
+       - /demo/node/material-service:/data
+     privileged: true
+     command:
+       - /usr/sbin/init
+     tty: true
+  app-server:
+     image: 10.0.0.96:5000/my_os/centos:7.java.app
+     hostname: app-server
+     labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:host_label: key1=110
+     ports:
+       - "9001:9000"
+     volumes:
+       - /demo/node/app-server:/data
+     privileged: true
+     command:
+       - /usr/sbin/init
+     tty: true
