@@ -22,7 +22,7 @@ services:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
      ports:
-       - "8100:8100"
+       - "8001:8001"
      volumes:
        - /demo/node/sync-server:/data
      privileged: true
