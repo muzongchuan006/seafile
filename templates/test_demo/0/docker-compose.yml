@@ -11,6 +11,7 @@ services:
        - "38000:8000"
      volumes:
        - /demo/node/seafile:/data
+       - /demo/node/seafile/mysql:/var/lib/mysql
      privileged: true
      command:
        - /usr/sbin/init
