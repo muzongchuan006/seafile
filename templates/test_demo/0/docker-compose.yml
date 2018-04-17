@@ -7,8 +7,8 @@ services:
       io.rancher.scheduler.global: 'true'
       io.rancher.scheduler.affinity:host_label: key1=110
      ports:
-       - "38082:8082"
-       - "38000:8000"
+       - "8082:8082"
+       - "8000:8000"
      volumes:
        - /demo/node/seafile:/data
        - /demo/node/seafile/mysql:/var/lib/mysql
